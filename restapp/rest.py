@@ -4,10 +4,10 @@ import pandas as pd
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 from pprint import pprint
-
+from flask_cors import CORS
 app = Flask(__name__)
 api = Api(app)
-
+CORS(app)
 ######################################################################################
 scope = [
     "https://spreadsheets.google.com/feeds",
