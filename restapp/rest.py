@@ -41,7 +41,11 @@ class Goroda(Resource):
 class Materialy(Resource):
     def get(self):
         column_name = request.args.get('column_name')
-        return {'unique_first_words': list(unique_first_words), 'column_name': column_name}
+        # Return a properly formatted JSON response
+        return jsonify({
+            'unique_first_words': list(unique_first_words),
+            'column_name': column_name
+        })
 
 class GorodaMaterialy(Resource):
     def get(self):
