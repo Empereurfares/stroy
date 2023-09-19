@@ -34,6 +34,9 @@ gorodematerialy = dict()
 print(df)
 
 ######################################################################################
+@app.route('/ping', methods=['GET'])
+def ping():
+    return jsonify({'status': 'OK'}), 200
 class Goroda(Resource):
     def get(self):
         return {'completetable': readytable}
