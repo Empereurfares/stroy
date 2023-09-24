@@ -21,7 +21,7 @@ client = gspread.authorize(creds)
 
 ######################################################################################
 pesok = client.open("pesok")
-kopya = pesok.sheet2
+kopya = pesok.worksheet("Main")
 readytable = kopya.get_all_values()
 column_names = readytable[0]
 unique_first_words = set()
