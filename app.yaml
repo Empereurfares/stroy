@@ -1,0 +1,15 @@
+runtime: python39  # Make sure this matches your Python version
+
+instance_class: F2  # Adjust based on your expected load, F2 is just a general-purpose class
+
+automatic_scaling:
+  target_cpu_utilization: 0.65
+  min_instances: 1
+  max_instances: 10
+
+entrypoint: python3 rest.py  # Replace [YOUR_FILENAME] with the name of your Flask script without the .py
+
+env_variables:  # Any environment variables you might need
+  CONFIG_FILE_PATH: "creds.json"
+
+# Depending on your requirements, you might also want to specify other configurations, like network, resources, etc.
